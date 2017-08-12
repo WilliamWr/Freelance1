@@ -18,48 +18,13 @@
   </head>
 
   <body>
+    <%= render '/layouts/nav' %>
     <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Student Summer Storage</a>
-        </div>
-        <div class="navbar-collapse collapse navbar-right">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/pages/home">HOME</a></li>
-            <li class="blue"><a href="/pages/about">ABOUT</a></li>
-            <li class="blue"><a href="/pages/pricing">PRICING</a></li>
-            <li class="blue"><a href="/pages/contact">CONTACT</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACCOUNT <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="blog.html" class="blue">Log in</a></li>
-                <li><a href="single-post.html" class="blue">Sign up</a></li>
-                <li><a href="portfolio.html" class="blue">Edit Account</a></li>
 
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
 
 
     <%= yield %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/retina-1.1.0.js"></script>
-<script src="assets/js/jquery.hoverdir.js"></script>
-<script src="assets/js/jquery.hoverex.min.js"></script>
-<script src="assets/js/jquery.prettyPhoto.js"></script>
-  <script src="assets/js/jquery.isotope.min.js"></script>
-  <script src="assets/js/custom.js"></script>
+
 
 
   </body>

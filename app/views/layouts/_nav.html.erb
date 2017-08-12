@@ -1,0 +1,49 @@
+<!-- <% if !user_signed_in? %>
+  <%= render 'layouts/nav_guest' %>
+<%else%>
+ <%= render 'layouts/nav_user' %>
+ <%end%> -->
+
+ <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+   <div class="container">
+     <div class="navbar-header">
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="index.html">Student Summer Storage</a>
+     </div>
+     <div class="navbar-collapse collapse navbar-right">
+       <span class="notice"><%= notice %></span>
+     <span class="alert"><%= alert %></span>
+       <ul class="nav navbar-nav">
+         <li class="active"><a href="/pages/home">HOME</a></li>
+         <li class="blue"><a href="/pages/about">ABOUT</a></li>
+         <li class="blue"><a href="/pages/pricing">PRICING</a></li>
+         <li class="blue"><a href="/pages/contact">CONTACT</a></li>
+         <li class="dropdown">
+
+
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><% if user_signed_in? %>
+             <%= current_user.email%>
+             <%else %>
+
+             ACCOUNT <b class="caret"></b></a>
+             <%end%>
+           <ul class="dropdown-menu">
+             <li><%= link_to("Log in", new_user_session_path)%></a></li>
+             <li><%=link_to('Sign Up', new_user_registration_path)%></li>
+             <% if user_signed_in? %>
+             <li><%= link_to("Edit Account", edit_user_registration_path) %></li>
+             <li><%= link_to("Sign Out", destroy_user_session_path, :method => :delete) %></li>
+             <%end%>
+
+
+           </ul>
+         </li>
+       </ul>
+     </div><!--/.nav-collapse -->
+   </div>
+ </div>
