@@ -4,6 +4,10 @@ class PagesController < ApplicationController
   def index
   end
 
+  def pricing
+    @locations = ["Albright Court", "Albright Woods", "Crowell Hall", "Krause Hall", "Moan Hall", "North Hall", "Rockland Hall", "Smith Hall", "Walton Hall"]
+  end
+
   def home
   end
 
