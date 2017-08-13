@@ -2,6 +2,8 @@
 <!-- *****************************************************************************************************************
 	 BLUE WRAP
 	 ***************************************************************************************************************** -->
+
+
 	<div id="blue">
 	    <div class="container">
 			<div class="row">
@@ -10,87 +12,140 @@
 	    </div> <!-- /container -->
 	</div><!-- /blue -->
 </h3>
+<div>
+
+  <!-- Nav tabs -->
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Move times</a></li>
+    <li role="presentation"><a id="mySelect" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Items</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Tips</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Purchasing</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home"><form>
+Move-out
+<select>
 
 
-<div class="plans">
-  <div class="plan">
-    <img src="https://www.stowsimple.com/images/2x4%20Urbin%20Closet_COLLEGE.gif" alt="">
-    <h3 class="plan-title">Small Items</h3>
-    <p class="plan-price">$35 <span class="plan-unit">per month</span></h3>
-    <ul class="plan-features">
-      <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
+<option>Albright Woods<option>
+<option>Crowell Hall<option>
+<option>Krause Hall<option>
+<option>Moan Hall<option>
+<option>North Hall<option>
+<option>Rockland Hall (New)<option>
+<option>Smith Hall<option>
+<option>Walton Hall<option>
+</select>
+move-in
+<select>
 
 
-    </ul>
-    <a href="#" class="plan-button">Choose Plan</a>
-  </div>
-  <div class="plan plan-highlight">
-    <p class="plan-recommended">Recommended</h3>
-    <img src="https://www.stowsimple.com/images/2x4%20Urbin%20Closet_COLLEGE.gif" alt="">
-    <h3 class="plan-title">Medium Items</h3>
-    <p class="plan-price">$45 <span class="plan-unit">per month</span></h3>
-    <ul class="plan-features">
-      <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
-    </ul>
-    <a href="#" class="plan-button">Choose Plan</a>
-  </div>
-  <div class="plan">
-    <img src="https://www.stowsimple.com/images/5x5%20Urbin%20Closet_COLLEGEv2.gif" alt="">
+<option>Albright Woods<option>
+<option>Crowell Hall<option>
+<option>Krause Hall<option>
+<option>Moan Hall<option>
+<option>North Hall<option>
+<option>Rockland Hall (New)<option>
+<option>Smith Hall<option>
+<option>Walton Hall<option>
+</select>
+</form><button onclick="myFunction()">Try it</button></div>
+<script>
+function myFunction() {
+    document.getElementById("mySelect").disabled = true;
+}
+</script>
+    <div role="tabpanel" class="tab-pane" id="profile"><div class="plans">
+		  <div class="plan">
+		    <img src="https://www.stowsimple.com/images/2x4%20Urbin%20Closet_COLLEGE.gif" alt="">
+		    <h3 class="plan-title">Small Items</h3>
+		    <p class="plan-price">$35 <span class="plan-unit">per month</span></h3>
+		    <ul class="plan-features">
+		      <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
 
-    <h3 class="plan-title">Large Items</h3>
-    <p class="plan-price">$60 <span class="plan-unit">per month</span></h3>
-    <ul class="plan-features">
-      <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
-    </ul>
-    <a href="#" class="plan-button">Choose Plan</a>
+
+		    </ul>
+		    <a href="#" class="plan-button">Choose Plan</a>
+		  </div>
+		  <div class="plan plan-highlight">
+		    <p class="plan-recommended">Recommended</h3>
+		    <img src="https://www.stowsimple.com/images/2x4%20Urbin%20Closet_COLLEGE.gif" alt="">
+		    <h3 class="plan-title">Medium Items</h3>
+		    <p class="plan-price">$45 <span class="plan-unit">per month</span></h3>
+		    <ul class="plan-features">
+		      <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
+		    </ul>
+		    <a href="#" class="plan-button">Choose Plan</a>
+		  </div>
+		  <div class="plan">
+		    <img src="https://www.stowsimple.com/images/5x5%20Urbin%20Closet_COLLEGEv2.gif" alt="">
+
+		    <h3 class="plan-title">Large Items</h3>
+		    <p class="plan-price">$60 <span class="plan-unit">per month</span></h3>
+		    <ul class="plan-features">
+		      <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
+		    </ul>
+		    <a href="#" class="plan-button">Choose Plan</a>
+		  </div>
+		  <div class="plan">
+		    <img src="https://www.stowsimple.com/images/5x8%20Urbin%20Closet_COLLEGE%20copy.gif" alt="">
+		    <h3 class="plan-title">Extra Large</h3>
+		    <p class="plan-price">$75 <span class="plan-unit">per month</span></h3>
+		    <ul class="plan-features">
+		      <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
+		    </ul>
+		    <a href="#" class="plan-button">Choose Plan</a>
+		  </div>
+		  <div class="plan">
+		    <img src="https://www.stowsimple.com/images/Icon_SS_Large%20Storage%20Unit.gif" alt="">
+		    <h3 class="plan-title">Huge Items</h3>
+		    <p class="plan-price">$95 <span class="plan-unit">per month</span></h3>
+		    <ul class="plan-features">
+		      <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
+		      <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
+		    </ul>
+		    <a href="#" class="plan-button">Choose Plan</a>
+		  </div>
+		</div>
+		<center>
+		  <h3>Student Summer Storage will always compete to offer you the most affordable
+		    <h3> pricing in the industry. We guarantee lowest advertised price of all alike</h3>
+		    <h3>moving and storage services nationwide.</h3>
+		  <h3>To get started we ask that you complete registration by May 1st and pay a </h3>
+		    <h3>$25.00 non-refundable deposit to reserve your spot. This deposit will be </h3>
+		    <h3> deducted from your total storage cost. Late registrations are accepted but may incur a fee.</p>
+		</center></div>
+    <div role="tabpanel" class="tab-pane" id="messages">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel laborum reprehenderit eveniet unde praesentium quisquam vero sed corrupti magnam minima quidem, facere, doloremque esse labore aspernatur, nulla ad pariatur. Magnam.</div>
+    <div role="tabpanel" class="tab-pane" id="settings">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam velit error, eum dignissimos sint dolorem omnis eos commodi similique quis libero sed tenetur odio vero deleniti nostrum! Laboriosam, neque!</div>
   </div>
-  <div class="plan">
-    <img src="https://www.stowsimple.com/images/5x8%20Urbin%20Closet_COLLEGE%20copy.gif" alt="">
-    <h3 class="plan-title">Extra Large</h3>
-    <p class="plan-price">$75 <span class="plan-unit">per month</span></h3>
-    <ul class="plan-features">
-      <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
-    </ul>
-    <a href="#" class="plan-button">Choose Plan</a>
-  </div>
-  <div class="plan">
-    <img src="https://www.stowsimple.com/images/Icon_SS_Large%20Storage%20Unit.gif" alt="">
-    <h3 class="plan-title">Huge Items</h3>
-    <p class="plan-price">$95 <span class="plan-unit">per month</span></h3>
-    <ul class="plan-features">
-      <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
-      <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
-    </ul>
-    <a href="#" class="plan-button">Choose Plan</a>
-  </div>
+
 </div>
-<center>
-  <h3>Student Summer Storage will always compete to offer you the most affordable
-    <h3> pricing in the industry. We guarantee lowest advertised price of all alike</h3>
-    <h3>moving and storage services nationwide.</h3>
-  <h3>To get started we ask that you complete registration by May 1st and pay a </h3>
-    <h3>$25.00 non-refundable deposit to reserve your spot. This deposit will be </h3>
-    <h3> deducted from your total storage cost. Late registrations are accepted but may incur a fee.</p>
-</center>
+
+
+
+
 <!-- *****************************************************************************************************************
  FOOTER
  ***************************************************************************************************************** -->

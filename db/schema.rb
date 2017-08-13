@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812031823) do
+ActiveRecord::Schema.define(version: 20170813031756) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20170812031823) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "firstname"
+    t.string "middleinitial"
+    t.string "lastname"
+    t.string "schoolname"
+    t.integer "schoolyear"
+    t.string "parentfirstname"
+    t.string "parentmiddleinitial"
+    t.string "parentlastname"
+    t.string "parentemail"
+    t.string "studentphonenumber"
+    t.string "parentphonenumber"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
