@@ -26,25 +26,16 @@
 }
 
 .how {
-width: 202px;
+  width: 202px;
 }
 
-<<<<<<< HEAD
- .when {
-   width: 43%;
- }
- .round {
-   border-radius: 50%;
- }
+.when {
+  width: 43%;
+}
+.round {
+  border-radius: 50%;
+}
 
- /*
- * Copyright (c) 2013 Thibaut Courouble
- * http://www.cssflow.com
- * Licensed under the MIT License
- *
- * Sass/SCSS source: https://goo.gl/L5FgX4
- * PSD by Benoît Philibert: https://goo.gl/gcFMK1
- */
 
 body {
   font: 13px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -185,6 +176,7 @@ body {
 }
 @media (min-width: 1200px) {
   left: 290px;
+}
 
 .when {
 width: 255px;
