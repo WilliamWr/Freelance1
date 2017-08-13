@@ -4,16 +4,19 @@
   <head>
     <title>SSS</title>
     <%= csrf_meta_tags %>
+    <!-- REFACORED -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+     <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <!-- Latest compiled and minified CSS -->
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Custom styles for this template -->
-   <link href="http://www.blacktie.co/demo/solid/assets/css/style.css" rel="stylesheet">
-   <link href="http://www.blacktie.co/demo/solid/assets/css/font-awesome.min.css" rel="stylesheet">
-
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
-
-
+    <link href="http://www.blacktie.co/demo/solid/assets/css/style.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
   </head>
 
@@ -24,7 +27,6 @@
 
 
     <%= yield %>
-
 
 
   </body>
