@@ -8,30 +8,31 @@
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
+
   </div>
   <div class="field">
     <%= f.label :student_number %><br />
-    <%= f.text_field :studentphonenumber%>
+    <%= f.text_field :studentphonenumber, class: 'form-control', required: true%>
   </div>
   <div class="field">
     <%= f.label :school_name %><br />
-    <%= f.text_field :schoolname %>
+    <%= f.text_field :schoolname, class: 'form-control', required: true %>
   </div>
   <div class="field">
     <%= f.label :school_year %><br />
-    <%= f.text_field :schoolyear %>
+    <%= f.text_field :schoolyear, class: 'form-control', required: true %>
   </div>
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.text_field :firstname %>
+    <%= f.text_field :firstname, class: 'form-control', required: true %>
   </div>
   <div class="field">
     <%= f.label :middle_initial %><br />
-    <%= f.text_field :middleinitial %>
+    <%= f.text_field :middleinitial, class: 'form-control', required: true %>
   </div>
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.text_field :lastname%>
+    <%= f.text_field :lastname, class: 'form-control', required: true%>
   </div>
   <div class="field">
     <%= f.label :parent_first_name %><br />
@@ -39,7 +40,7 @@
   </div>
   <div class="field">
     <%= f.label :parent_middle_initial %><br />
-    <%= f.text_field :parentmiddleinitial %>
+    <%= f.text_field :parentmiddleinitial%>
   </div>
   <div class="field">
     <%= f.label :parent_last_name %><br />
