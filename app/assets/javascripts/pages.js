@@ -11,7 +11,7 @@ $(function(){
     }else{
       // Using the validated library check if the inputs are valid
       // is is valid going to remove disableTab class form the tab and go to the next tab
-      if ($visibleTab.find("input").valid()) {
+      if ($visibleTab.find("input").length < 1 || $visibleTab.find("input").valid()) {
         var nextLi = $activeTab.next();
         $(nextLi).removeClass('disabledTab');
         $(nextLi).find("a").trigger('click');
