@@ -17,6 +17,9 @@ devise_for :users, :controllers => { registrations: 'registrations' }
 
   get 'users/show'
 
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+resources "contacts", only: [:new, :create]
+
 
 
 

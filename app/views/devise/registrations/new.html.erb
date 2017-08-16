@@ -1,79 +1,155 @@
 <center>
 <h1>.</h1>
 <h2>Sign up</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email,  class: 'form-control', autofocus: true,  required: true %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-
-  </div>
-  <div class="field">
-    <%= f.label :student_number %><br />
-    <%= f.text_field :studentphonenumber, class: 'form-control', required: true%>
-  </div>
-  <div class="field">
-    <%= f.label :school_name %><br />
-    <%= f.text_field :schoolname, class: 'form-control', required: true %>
-  </div>
-  <div class="field">
-    <%= f.label :school_year %><br />
-    <%= f.text_field :schoolyear, class: 'form-control', required: true %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :firstname, class: 'form-control', required: true %>
-  </div>
-  <div class="field">
-    <%= f.label :middle_initial %><br />
-    <%= f.text_field :middleinitial, class: 'form-control', required: true %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :lastname, class: 'form-control', required: true%>
-  </div>
-  <div class="field">
-    <%= f.label :parent_first_name %><br />
-    <%= f.text_field :parentfirstname %>
-  </div>
-  <div class="field">
-    <%= f.label :parent_middle_initial %><br />
-    <%= f.text_field :parentmiddleinitial%>
-  </div>
-  <div class="field">
-    <%= f.label :parent_last_name %><br />
-    <%= f.text_field :parentlastname%>
-  </div>
-  <div class="field">
-    <%= f.label :parent_phone_number %><br />
-    <%= f.text_field :parentphonenumber%>
-  </div>
-  <div class="field">
-    <%= f.label :parent_email %><br />
-    <%= f.text_field :parentemail%>
-  </div>
-
+    </div>
+    <div class="field">
+      <%= f.label :student_number %><br />
+      <%= f.text_field :studentphonenumber, class: 'form-control', required: true%>
+    </div>
+    <div class="field">
+      <%= f.label :school_name %><br />
+      <%= f.text_field :schoolname, class: 'form-control', required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :school_year %><br />
+      <%= f.text_field :schoolyear, class: 'form-control', required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :firstname, class: 'form-control', required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :middle_initial %><br />
+      <%= f.text_field :middleinitial, class: 'form-control', required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :lastname, class: 'form-control', required: true%>
+    </div>
+    <div class="field">
+      <%= f.label :parent_first_name %><br />
+      <%= f.text_field :parentfirstname,  class: 'form-control' %>
+    </div>
+    <div class="field">
+      <%= f.label :parent_middle_initial %><br />
+      <%= f.text_field :parentmiddleinitial,  class: 'form-control'%>
+    </div>
+    <div class="field">
+      <%= f.label :parent_last_name %><br />
+      <%= f.text_field :parentlastname,  class: 'form-control'%>
+    </div>
+    <div class="field">
+      <%= f.label :parent_phone_number %><br />
+      <%= f.text_field :parentphonenumber,  class: 'form-control'%>
+    </div>
+    <div class="field">
+      <%= f.label :parent_email %><br />
+      <%= f.text_field :parentemail,  class: 'form-control'%>
+    </div>
 
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
 
-<%= render "devise/shared/links" %>
-</center>
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+  </center>
+
+
+<style media="screen">
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+form {
+  max-width: 450px;
+  margin: 0 auto;
+}
+form > div {
+  position: relative;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+form > div > label {
+  opacity: 0.3;
+  font-weight: bold;
+  position: absolute;
+  top: 22px;
+  left: 20px;
+}
+form > div > input[type="text"], form > div > input[type="email"], form > div > input[type="password"] {
+  width: 100%;
+  border: 0;
+  padding: 20px 20px 20px 50px;
+  background: #eee;
+}
+form > div > input[type="text"]:focus, form > div > input[type="email"]:focus, form > div > input[type="password"]:focus {
+  outline: 0;
+  background: white;
+}
+form > div > input[type="text"]:focus + label, form > div > input[type="email"]:focus + label, form > div > input[type="password"]:focus + label {
+  opacity: 0;
+}
+form > div > input[type="text"]:valid, form > div > input[type="email"]:valid, form > div > input[type="password"]:valid {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 20px 20px;
+}
+form > div > input[type="text"]:valid + label, form > div > input[type="email"]:valid + label, form > div > input[type="password"]:valid + label {
+  opacity: 0;
+}
+form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown), form > div > input[type="email"]:invalid:not(:focus):not(:placeholder-shown), form > div > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
+  background: pink;
+}
+form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown) + label, form > div > input[type="email"]:invalid:not(:focus):not(:placeholder-shown) + label, form > div > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) + label {
+  opacity: 0;
+}
+form > div > input[type="text"]:invalid:focus:not(:placeholder-shown) ~ .requirements, form > div > input[type="email"]:invalid:focus:not(:placeholder-shown) ~ .requirements, form > div > input[type="password"]:invalid:focus:not(:placeholder-shown) ~ .requirements {
+  max-height: 200px;
+  padding: 0 30px 20px 50px;
+}
+form > div .requirements {
+  padding: 0 30px 0 50px;
+  color: #999;
+  max-height: 0;
+  transition: 0.28s;
+  overflow: hidden;
+  color: red;
+  font-style: italic;
+}
+form input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin: 20px 0;
+  background: #41d873;
+  color: white;
+  border: 0;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+</style>
