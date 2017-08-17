@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170816000142) do
+ActiveRecord::Schema.define(version: 20170817154315) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,6 +21,35 @@ ActiveRecord::Schema.define(version: 20170816000142) do
     t.string "name"
     t.string "email"
     t.text "message"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.datetime "move_out_date", null: false
+    t.string "move_out_location", null: false
+    t.string "move_out_room", null: false
+    t.string "move_out_other"
+    t.datetime "move_in_date", null: false
+    t.string "move_in_location", null: false
+    t.string "move_in_room", null: false
+    t.string "move_in_other"
+    t.json "storage_items"
+    t.boolean "confirm_other", default: false, null: false
+    t.boolean "registration_fee_paid", default: false
+    t.datetime "registration_fee_paid_date"
+    t.integer "moving_box_total"
+    t.decimal "moving_box_amount"
+    t.integer "package_tape_total"
+    t.decimal "package_tape_amount"
+    t.integer "package_mattress_total"
+    t.decimal "package_mattress_amount"
+    t.integer "package_bubble_wrap_total"
+    t.decimal "package_bubble_wrap_amount"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["confirm_other"], name: "index_purchases_on_confirm_other"
+    t.index ["registration_fee_paid"], name: "index_purchases_on_registration_fee_paid"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,9 +75,9 @@ ActiveRecord::Schema.define(version: 20170816000142) do
     t.string "parentlastname"
     t.string "parentemail"
     t.string "studentphonenumber"
-    t.string "parentphonenumber"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "purchases", "users"
 end
