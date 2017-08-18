@@ -1,0 +1,228 @@
+<div id="blue">
+  <div class="container">
+	<div class="row">
+		<h3>Pricing.</h3>
+	</div><!-- /row -->
+  </div> <!-- /container -->
+</div><!-- /blue -->
+
+<div>
+
+  <ul class="nav nav-tabs" role="tablist">
+
+    <li role="presentation" class="active">
+      <a href="#step1" aria-controls="step1" role="tab" data-toggle="tab">Move times</a>
+    </li>
+    <li role="presentation" class="disabledTab">
+      <a id="mySelect" href="#step2" aria-controls="step2" role="tab" data-toggle="tab" >Items</a>
+    </li>
+    <li role="presentation" class="disabledTab">
+      <a href="#step3" aria-controls="step3" role="tab" data-toggle="tab">Tips</a>
+    </li>
+    <li role="presentation" class="disabledTab">
+      <a href="#step4" aria-controls="step4" role="tab" data-toggle="tab">Purchasing</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+
+    <%= form_for(@purchase) do |f| %>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="step1">
+          <div class="form-group clearfix">
+            <div class="col-xs-12">
+              <div class="col-md-6">
+                <%= f.label(:move_out_location, "Move Out", ) %>
+                <%= f.select(:move_out_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
+              </div>
+              <div class="col-md-6">
+                <%= f.label(:move_out_room, "Room #", class: 'block') %>
+                <%= f.text_field(:move_out_room,class: 'form-control', required: true) %>
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="col-md-6">
+                <%= f.label(:move_in_location, "Move In") %>
+                <%= f.select(:move_in_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
+              </div>
+              <div class="col-md-6">
+                <%= f.label(:move_in_room, "Room #", class: 'block') %>
+                <%= f.text_field(:move_in_room, class: 'form-control', required: true) %>
+              </div>
+              <div class="col-md-6">
+                <%= f.label(:move_out_date, "move out", class: 'block') %>
+                <%= f.date_field(:move_out_date, class: 'form-control', required: true) %>
+              </div>
+              <div class="col-md-6">
+                <%= f.label(:move_in_date, "move in", class: 'block') %>
+                <%= f.date_field(:move_in_date, class: 'form-control', required: true) %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="step2">
+          <div class="plans">
+            <div class="plan">
+              <img src="https://www.stowsimple.com/images/2x4%20Urbin%20Closet_COLLEGE.gif" alt="">
+              <h3 class="plan-title">Small Items</h3>
+              <p class="plan-price">$35 <span class="plan-unit">per month</span></p>
+              <ul class="plan-features">
+                <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
+              </ul>
+              <!-- <input type="radio" required="true" id="purchase_plan_small" name="purchase[plan]" value="Choose Plan" /> -->
+              <%= label_tag("move_in_room", "number of items", class: 'block') %>
+              <%= text_field_tag("move_in_room", nil, class: 'form-control', required: true) %>
+              <%= label_tag("move_in_room", "description of items", class: 'block') %>
+              <%= text_field_tag("move_in_room", nil, class: 'form-control', required: true) %>
+
+
+            </div>
+            <div class="plan plan-highlight">
+              <p class="plan-recommended">Recommended</h3>
+              <img src="https://www.stowsimple.com/images/2x4%20Urbin%20Closet_COLLEGE.gif" alt="">
+              <h3 class="plan-title">Medium Items</h3>
+              <p class="plan-price">$45 <span class="plan-unit">per month</span></p>
+              <ul class="plan-features">
+                <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
+              </ul>
+              <!-- <input type="radio" required="true" checked id="purchase_plan_medium" name="purchase[plan]" value="Choose Plan" /> -->
+              <%= label_tag("move_in_room", "number of items", class: 'block') %>
+              <%= text_field_tag("move_in_room", nil, class: 'form-control', required: true) %>
+              <%= label_tag("move_in_room", "description of items", class: 'block') %>
+              <%= text_field_tag("move_in_room", nil, class: 'form-control', required: true) %>
+
+            </div>
+            <div class="plan">
+              <img src="https://www.stowsimple.com/images/5x5%20Urbin%20Closet_COLLEGEv2.gif" alt="">
+
+              <h3 class="plan-title">Large Items</h3>
+              <p class="plan-price">$60 <span class="plan-unit">per month</span></p>
+              <ul class="plan-features">
+                <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
+              </ul>
+              <!-- <input type="radio" required="true" id="purchase_plan_large" name="purchase[plan]" value="Choose Plan" /> -->
+              <%= label_tag("move_in_room", "number of items", class: 'block') %>
+              <%= text_field_tag("move_in_room", nil, class: 'form-control', required: true) %>
+              <%= label_tag("move_in_room", "description of items", class: 'block') %>
+              <%= text_field_tag("move_in_room", nil, class: 'form-control', required: true) %>
+            </div>
+            <div class="plan">
+              <img src="https://www.stowsimple.com/images/5x8%20Urbin%20Closet_COLLEGE%20copy.gif" alt="">
+              <h3 class="plan-title">Extra Large</h3>
+              <p class="plan-price">$75 <span class="plan-unit">per month</span></p>
+              <ul class="plan-features">
+                <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
+              </ul>
+              <!-- <input type="radio" required="true" id="purchase_plan_extra_large" name="purchase[plan]" value="Choose Plan" /> -->
+              <%= label_tag("move_in_room", "number of items", class: 'block') %>
+              <%= text_field_tag("move_in_room", nil, class: 'form-control', required: true) %>
+              <%= label_tag("move_in_room", "number of items", class: 'block') %>
+              <%= text_field_tag("move_in_room", nil, class: 'form-control', required: true) %>
+            </div>
+            <div class="plan">
+              <img src="https://www.stowsimple.com/images/Icon_SS_Large%20Storage%20Unit.gif" alt="">
+              <h3 class="plan-title">Huge Items</h3>
+              <p class="plan-price">$95 <span class="plan-unit">per month</span></p>
+              <ul class="plan-features">
+                <li class="plan-feature">Box <span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Mirror<span class="plan-feature-unit"></span> <span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Stool<span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Fan<span class="plan-feature-name"></span></li>
+                <li class="plan-feature">Mat<span class="plan-feature-name"></span></li>
+              </ul>
+              <!-- <input type="radio" required="true" id="purchase_plan_huge" name="purchase[plan]" value="Choose Plan" /> -->
+              <%= label_tag("move_in_room", "number of items", class: 'block') %>
+              <%= text_field_tag("move_in_room", nil, class: 'form-control', required: true) %>
+              <%= label_tag("move_in_room", "number of items", class: 'block') %>
+              <%= text_field_tag("move_in_room", nil, class: 'form-control', required: true) %>
+            </div>
+          </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="step3">
+          Packing Checklist and Tips:
+
+
+          -Receive packing materials and pack.
+          -Do not over pack your box.
+          -Protect the contents in your box. Use bubble wrap, blankets, towels or anything else that will help protect your belongings.
+          -Distribute the weight in your boxes evenly.  For example, do not put all of your text books in one box.
+          -Tape your Box very thoroughly! The more tape the better.
+          -Make sure all additional items are covered with needed bubble wrap or blankets.
+          -Remember your total cost of service must be paid in full by time of move-out.
+        </div>
+        <div role="tabpanel" class="tab-pane" id="step4">
+          <p>25$ registration deposit</p>
+          <br><input id="checkBox" type="checkbox"></br>
+          <p>packing material</p>
+          <br><input id="checkBox" type="checkbox"></br>
+          <p>$4 moving box</p>
+          <br><input id="checkBox" type="checkbox"></br>
+          <p>$4 packing tape</p>
+          <br><input id="checkBox" type="checkbox"></br>
+          <p>$10 mattress bag</p>
+          <br><input id="checkBox" type="checkbox"></br>
+          <p>7$ bubble wrap</p>
+          <br>Total packing_____</br>
+          <br><input id="checkBox" type="checkbox"></br>
+          <p>total storage______</p>
+          <br><input id="checkBox" type="checkbox"></br>
+        </div>
+
+      </div>
+      <%= link_to 'Next', nil, data: { is_done: false, url: 'url_to_make_post_here' }, class: 'purchase-form-btn btn btn-info'%>
+    <% end %>
+
+</div>
+
+
+
+<div id="footerwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h4>About</h4>
+        <div class="hline-w"></div>
+        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+      </div>
+      <div class="col-lg-4">
+        <h4>Social Links</h4>
+        <div class="hline-w"></div>
+        <h3>
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-tumblr"></i></a>
+        </h3>
+      </div>
+      <div class="col-lg-4">
+        <h4>Our Bunker</h4>
+        <div class="hline-w"></div>
+
+          Some Ave, 987,<br/>
+          23890, New York,<br/>
+          United States.<br/>
+        </h3>
+      </div>
+
+    </div><! --/row -->
+  </div><! --/container -->
+</div><! --/footerwrap -->

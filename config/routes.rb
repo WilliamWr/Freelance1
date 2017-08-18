@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   get 'pages/pages'
 
-  get 'pages/pricing'
+  resources :purchases
+
+
 devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users
   get 'users/index'

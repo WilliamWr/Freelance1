@@ -181,8 +181,10 @@ body {
 
 }
 
+
 #blu {
-  background: rgba(0, 179, 254, 0.52);
+  background: rgba(0, 179, 254, 0.52)
+
 }
 @media (min-width: 1200px) {
   left: 290px;
@@ -229,4 +231,7 @@ text-align: left;
 
 div.w3-third.w3-margin-bottom {
   width: 200px;
+}
+div.navbar {
+      background-color: rgba(56, 68, 82, 0.25)
 }
