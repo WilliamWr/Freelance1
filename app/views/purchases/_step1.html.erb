@@ -1,0 +1,33 @@
+<div role="tabpanel" class="tab-pane active" id="step1">
+  <div class="form-group clearfix">
+    <div class="col-xs-12">
+      <div class="col-md-6">
+        <%= f.label(:move_out_location, "Move Out", ) %>
+        <%= f.select(:move_out_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
+      </div>
+      <div class="col-md-6">
+        <%= f.label(:move_out_room, "Room #", class: 'block') %>
+        <%= f.text_field(:move_out_room,class: 'form-control', required: true) %>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="col-md-6">
+        <%= f.label(:move_in_location, "Move In") %>
+        <%= f.select(:move_in_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
+      </div>
+      <div class="col-md-6">
+        <%= f.label(:move_in_room, "Room #", class: 'block') %>
+        <%= f.text_field(:move_in_room, class: 'form-control', required: true) %>
+      </div>
+      <div class="col-md-6">
+        <%= f.label(:move_out_date, "move out", class: 'block') %>
+        <%= f.date_field(:move_out_date, class: 'form-control', required: true) %>
+      </div>
+      <div class="col-md-6">
+        <%= f.label(:move_in_date, "move in", class: 'block') %>
+        <%= f.date_field(:move_in_date, class: 'form-control', required: true) %>
+      </div>
+
+    </div>
+  </div>
+</div>

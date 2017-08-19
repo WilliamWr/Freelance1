@@ -1,0 +1,72 @@
+<div role="tabpanel" class="tab-pane" id="step2">
+  <div class="plans" data-type="plans-features">
+
+    <div class="plan" data-type="small">
+      <img src="https://www.stowsimple.com/images/2x4%20Urbin%20Closet_COLLEGE.gif" alt="">
+      <h3 class="plan-title">Small Items</h3>
+      <p class="plan-price">$35 <span class="plan-unit">per month</span></p>
+      <ul class="plan-features">
+      </ul>
+
+      <%= label_tag("small_item_count", "number of items", class: 'block') %>
+      <%= number_field_tag("small_item_count", nil, class: 'form-control', min: 0) %>
+      <%= label_tag("small_item_description", "description of items", class: 'block') %>
+      <%= text_field_tag("small_item_description", nil, class: 'form-control') %>
+    </div>
+
+    <div class="plan plan-highlight" data-type="medium">
+      <p class="plan-recommended">Recommended</h3>
+      <img src="https://www.stowsimple.com/images/2x4%20Urbin%20Closet_COLLEGE.gif" alt="">
+      <h3 class="plan-title">Medium Items</h3>
+      <p class="plan-price">$45 <span class="plan-unit">per month</span></p>
+      <ul class="plan-features">
+      </ul>
+
+      <%= label_tag("medium_item_count", "number of items", class: 'block') %>
+      <%= number_field_tag("medium_item_count", nil, class: 'form-control', min: 0) %>
+      <%= label_tag("medium_item_description", "description of items", class: 'block') %>
+      <%= text_field_tag("medium_item_description", nil, class: 'form-control') %>
+    </div>
+
+    <div class="plan" data-type="large">
+      <img src="https://www.stowsimple.com/images/5x5%20Urbin%20Closet_COLLEGEv2.gif" alt="">
+
+      <h3 class="plan-title">Large Items</h3>
+      <p class="plan-price">$60 <span class="plan-unit">per month</span></p>
+      <ul class="plan-features">
+      </ul>
+
+      <%= label_tag("large_item_count", "number of items", class: 'block') %>
+      <%= number_field_tag("large_item_count", nil, class: 'form-control', min: 0) %>
+      <%= label_tag("large_item_description", "description of items", class: 'block') %>
+      <%= text_field_tag("large_item_description", nil, class: 'form-control') %>
+    </div>
+
+    <div class="plan" data-type="extra_large">
+      <img src="https://www.stowsimple.com/images/5x8%20Urbin%20Closet_COLLEGE%20copy.gif" alt="">
+      <h3 class="plan-title">Extra Large</h3>
+      <p class="plan-price">$75 <span class="plan-unit">per month</span></p>
+      <ul class="plan-features">
+      </ul>
+
+      <%= label_tag("extra_large_item_count", "number of items", class: 'block') %>
+      <%= number_field_tag("extra_large_item_count", nil, class: 'form-control', min: 0) %>
+      <%= label_tag("extra_large_item_description", "description of items", class: 'block') %>
+      <%= text_field_tag("extra_large_item_description", nil, class: 'form-control') %>
+    </div>
+
+    <div class="plan" data-type="huge">
+      <img src="https://www.stowsimple.com/images/Icon_SS_Large%20Storage%20Unit.gif" alt="">
+      <h3 class="plan-title">Huge Items</h3>
+      <p class="plan-price">$95 <span class="plan-unit">per month</span></p>
+
+      <ul class="plan-features">
+      </ul>
+
+      <%= label_tag("huge_item_count", "number of items", class: 'block') %>
+      <%= number_field_tag("huge_item_count", nil, class: 'form-control', min: 0) %>
+      <%= label_tag("huge_item_description", "description of items", class: 'block') %>
+      <%= text_field_tag("huge_item_description", nil, class: 'form-control') %>
+    </div>
+  </div>
+</div>

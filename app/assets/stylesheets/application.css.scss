@@ -95,18 +95,33 @@ body {
 }
 
 .plan-features {
-  width: 120px;
   margin: 20px auto 15px;
-  padding: 15px 0 0 15px;
   border-top: 1px solid #e5ded6;
   text-align: left;
 }
 
 .plan-feature {
   line-height: 20px;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
   color: #333;
+  margin: 8px 0;
+  position: relative;
+  &:hover {
+    .delete {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+  .delete {
+    opacity: 0;
+    transition: 200ms;
+    position: absolute;
+    right: 6px;
+    font-size: 12px;
+    top: 0px;
+    font-weight: bold;
+  }
 }
 
 .plan-feature + .plan-feature {
@@ -115,11 +130,11 @@ body {
 
 .plan-feature-unit {
   margin-left: 2px;
-  font-size: 16px;
+  font-size: 12px;
 }
 
-.plan-feature-name {
-  font-size: 13px;
+.plan-feature-desc {
+  font-size: 16px;
   font-weight: normal;
   color: #aaa;
 }
