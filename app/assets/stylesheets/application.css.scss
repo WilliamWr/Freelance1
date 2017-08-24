@@ -26,21 +26,25 @@
 }
 
 .how {
-  width: 202px;
+  width: 137px;
+}
+.why {
+  width: 215px;
 }
 
+.wen {
+  width: 165px;
+}
 
+.whenn {
+  width: 142px;
+}
 
- .when {
-   width: 43%;
- }
  .round {
    border-radius: 50%;
  }
 
-.when {
-  width: 43%;
-}
+
 .round {
   border-radius: 50%;
 }
@@ -191,9 +195,16 @@ body {
   border-radius: 0 0 4px 4px;
 }
 
-#headerwrap {
-  background-image: url("https://du1ux2871uqvu.cloudfront.net/sites/default/files/styles/normal_banner/public/article/MG1_4.jpg?itok=l8fWNUTz");
-
+#headerwrapp {
+  background-image: url(https://www.securityselfstorage.co.uk/wp-content/uploads/2016/02/student-storage-security-self-storage-waltham-cross-students-image.jpg);
+  border: blue;
+  background-color: #00b3fe;
+  min-height: 439px;
+  padding-top: 79px;
+  padding-bottom: 0px;
+  text-align: center;
+  margin-top: 100px;
+  color: white;
 }
 
 
@@ -248,12 +259,12 @@ div.w3-third.w3-margin-bottom {
   width: 200px;
 }
 div.navbar {
-      background-color: #202454;
+      background-color: #1E3888;
       color: #e6ca37;
 }
 
 div#blue {
-  background: #b8de33;
+  background: #03CEA4;
 }
 
 li.w3-black {
@@ -268,4 +279,49 @@ li.w3-black {
 
 button.w3-button.w3-block.w3-black{
   background-color: #202454!important;
+}
+
+.layer {
+  background-color: rgba(3, 206, 164, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 568px;
+}
+.home {
+  margin-top: 142px;
+width: 535px;
+}
+#services {
+  margin-top: 43px;
+}
+.w3-padding-16 {
+  background: white;
+}
+
+div#plans {
+  background: #EFEFEF;
+}
+div.w3-third.w3-margin-bottom {
+  width: 283px;
+}
+
+.circ {
+  border-radius: 50%;
+}
+.about {
+  background: #EFEFEF;
+}
+.flex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+div.optional {
+  margin-left: 50px;
+}
+div.flex {
+  margin-top: 100px;
 }
