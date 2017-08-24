@@ -1,9 +1,9 @@
-<center>
-<h1>.</h1>
-<h2>Sign up</h2>
+
+
+
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
-
+    <h2>Sign up</h2>
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email,  class: 'form-control', autofocus: true,  required: true %>
@@ -33,6 +33,7 @@
       <%= f.label :last_name %><br />
       <%= f.text_field :lastname, class: 'form-control', required: true%>
     </div>
+
     <div class="field">
       <%= f.label :parent_first_name %><br />
       <%= f.text_field :parentfirstname,  class: 'form-control' %>
@@ -56,6 +57,7 @@
 
 
 
+
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
@@ -75,7 +77,7 @@
   <% end %>
 
   <%= render "devise/shared/links" %>
-  </center>
+
 
 
 <style media="screen">
@@ -87,6 +89,7 @@ form {
 form > div {
   position: relative;
   background: white;
+  bottom: -60px;
   border-bottom: 1px solid #ccc;
 }
 form > div > label {
@@ -99,7 +102,7 @@ form > div > label {
 form > div > input[type="text"], form > div > input[type="email"], form > div > input[type="password"] {
   width: 100%;
   border: 0;
-  padding: 20px 20px 20px 50px;
+  padding: 10px 20px 20px 50px;
   background: #eee;
 }
 form > div > input[type="text"]:focus, form > div > input[type="email"]:focus, form > div > input[type="password"]:focus {
@@ -110,7 +113,6 @@ form > div > input[type="text"]:focus + label, form > div > input[type="email"]:
   opacity: 0;
 }
 form > div > input[type="text"]:valid, form > div > input[type="email"]:valid, form > div > input[type="password"]:valid {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: 20px 20px;
@@ -119,7 +121,7 @@ form > div > input[type="text"]:valid + label, form > div > input[type="email"]:
   opacity: 0;
 }
 form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown), form > div > input[type="email"]:invalid:not(:focus):not(:placeholder-shown), form > div > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) {
-  background: pink;
+
 }
 form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown) + label, form > div > input[type="email"]:invalid:not(:focus):not(:placeholder-shown) + label, form > div > input[type="password"]:invalid:not(:focus):not(:placeholder-shown) + label {
   opacity: 0;
@@ -151,5 +153,7 @@ form input[type="submit"] {
 * {
   box-sizing: border-box;
 }
+
+
 
 </style>
