@@ -17,11 +17,11 @@
       </div>
       <div class="field">
         <%= f.label :school_name %><br />
-        <%= f.text_field :schoolname, class: 'form-control', required: true %>
+        <%= f.select :schoolname, ["Palm Beach Atlantic", "Albright College", "Kutztown University"], class: 'form-control', required: true %>
       </div>
       <div class="field">
         <%= f.label :school_year %><br />
-        <%= f.text_field :schoolyear, class: 'form-control', required: true %>
+        <%= f.select :schoolyear, (2018..2070), class: 'form-control', required: true %>
       </div>
       <div class="field">
         <%= f.label :first_name %><br />
