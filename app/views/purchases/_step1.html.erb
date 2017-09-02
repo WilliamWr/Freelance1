@@ -4,12 +4,15 @@
       <div class="col-md-6">
         <%= f.label(:move_out_location, "Move Out", ) %>
         <% if current_user.schoolname == "Albright College" %>
-        <%= f.select(:move_out_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
+          <%= f.select(:move_out_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
         <% elsif current_user.schoolname == "Palm Beach Atlantic" %>
-        <%= f.select(:move_out_location, ["Baxter Hall", "Coastal Towers Apartments", "Johnson Hall", "Oceanview Hall", "Weyenberg Hall", "Rinker Hall", "Flagler Towers Apartments", "Lakeview Apartments", "Samaritan Gardens Apartments", "Mango Apartments"], class: 'form-control', required: true) %>
+          <%= f.select(:move_out_location, ["Baxter Hall", "Coastal Towers Apartments", "Johnson Hall", "Oceanview Hall", "Weyenberg Hall", "Rinker Hall", "Flagler Towers Apartments", "Lakeview Apartments", "Samaritan Gardens Apartments", "Mango Apartments"], class: 'form-control', required: true) %>
         <% elsif current_user.schoolname == "Kutztown University" %>
-        <%= f.select(:move_out_location, ["Beck Hall", "Berks Hall", "Bonner Hall", "Deatrick Hall", "Dixon Hall", "Gold Bear Village South", "Gold Bear Village West", "Honors Building", "Johnson Hall", "Lehigh Hall", "Rothermel hall", "Schuyl Hall", "University Place"], class: 'form-control', required: true) %>
+          <%= f.select(:move_out_location, ["Beck Hall", "Berks Hall", "Bonner Hall", "Deatrick Hall", "Dixon Hall", "Gold Bear Village South", "Gold Bear Village West", "Honors Building", "Johnson Hall", "Lehigh Hall", "Rothermel hall", "Schuyl Hall", "University Place"], class: 'form-control', required: true) %>
         <% end %>
+
+        <!-- TODO -->
+        <%= f.select(:move_out_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
 
       </div>
       <div class="col-md-6">
@@ -21,12 +24,15 @@
       <div class="col-md-6">
         <%= f.label(:move_in_location, "Move In") %>
         <% if current_user.schoolname == "Albright College" %>
-        <%= f.select(:move_in_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
+          <%= f.select(:move_in_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
         <% elsif current_user.schoolname == "Palm Beach Atlantic" %>
-        <%= f.select(:move_out_location, ["Baxter Hall", "Coastal Towers Apartments", "Johnson Hall", "Oceanview Hall", "Weyenberg Hall", "Rinker Hall", "Flagler Towers Apartments", "Lakeview Apartments", "Samaritan Gardens Apartments", "Mango Apartments"], class: 'form-control', required: true) %>
+          <%= f.select(:move_out_location, ["Baxter Hall", "Coastal Towers Apartments", "Johnson Hall", "Oceanview Hall", "Weyenberg Hall", "Rinker Hall", "Flagler Towers Apartments", "Lakeview Apartments", "Samaritan Gardens Apartments", "Mango Apartments"], class: 'form-control', required: true) %>
         <% elsif current_user.schoolname == "Kutztown University" %>
-        <%= f.select(:move_out_location, ["Beck Hall", "Berks Hall", "Bonner Hall", "Deatrick Hall", "Dixon Hall", "Gold Bear Village South", "Gold Bear Village West", "Honors Building", "Johnson Hall", "Lehigh Hall", "Rothermel hall", "Schuyl Hall", "University Place"], class: 'form-control', required: true) %>
+          <%= f.select(:move_out_location, ["Beck Hall", "Berks Hall", "Bonner Hall", "Deatrick Hall", "Dixon Hall", "Gold Bear Village South", "Gold Bear Village West", "Honors Building", "Johnson Hall", "Lehigh Hall", "Rothermel hall", "Schuyl Hall", "University Place"], class: 'form-control', required: true) %>
         <% end %>
+
+        <!-- TODOD -->
+        <%= f.select(:move_in_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
       </div>
       <div class="col-md-6">
         <%= f.label(:move_in_room, "Room #", class: 'block') %>

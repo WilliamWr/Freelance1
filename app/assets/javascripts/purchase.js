@@ -1,4 +1,65 @@
 $(function(){
+  var stripe = Stripe(document.head.querySelector("[name='stripe-key']").attributes.content.value);
+  var elements = stripe.elements();
+  var style = {
+    base: {
+      color: '#32325d',
+      lineHeight: '24px',
+      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSmoothing: 'antialiased',
+      fontSize: '16px',
+      '::placeholder': {
+        color: '#aab7c4'
+      }
+    },
+    invalid: {
+      color: '#fa755a',
+      iconColor: '#fa755a'
+    }
+  };
+
+  // Create an instance of the card Element
+  var card = elements.create('card', {style: style});
+
+  // Create a token when the form is submitted
+  var form = document.getElementById('new_purchase');
+
+  function stripeTokenHandler(token, opts) {
+    // Insert the token ID into the form so it gets submitted to the server
+    var form = document.getElementById('new_purchase');
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'purchase[ui_stripe_token]');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+    opts.formData['purchase[ui_stripe_token]'] = token.id;
+    submitPurchaseForm(opts)
+  }
+
+  function createToken(opts) {
+    stripe.createToken(card).then(function(result) {
+
+      if (result.error) {
+        // Inform the user if there was an error
+        var errorElement = document.getElementById('card-errors');
+        errorElement.textContent = result.error.message;
+      } else {
+        // Send the token to your server
+        stripeTokenHandler(result.token, opts);
+      }
+    });
+  };
+
+  // Handle real-time validation errors from the card Element.
+  card.addEventListener('change', function(event) {
+    var displayError = document.getElementById('card-errors');
+    if (event.error) {
+      displayError.textContent = event.error.message;
+    } else {
+      displayError.textContent = '';
+    }
+  });
+
   $(document).on('click', '.purchase-form-btn', function(event) {
     event.preventDefault();
     var self = $(this),
@@ -30,14 +91,15 @@ $(function(){
         }
       })
       formData['purchase[storage_items]'] = JSON.stringify(storage_items);
-      $.ajax({
-        method: "POST",
-        url: url,
-        dataType: "json",
-        data: formData
-      }).done(function(data){
-        console.log(data)
-      });
+      var opts = {
+        formData: formData,
+        url: url
+      }
+      if ($("[name='stripeToken']").length > 0) {
+        submitPurchaseForm(opts)
+      }else {
+        createToken(opts);
+      }
     }else{
       // Using the validated library check if the inputs are valid
       // is is valid going to remove disableTab class form the tab and go to the next tab
@@ -48,11 +110,25 @@ $(function(){
 
         if ($activeTab.find("a").attr("href") == '#step3') {
           self.attr('data-is-done', true);
+          // Add an instance of the card UI component into the `card-element` <div>
+          card.mount('#card-element');
         }
       }
     }
   });
 })
+
+function submitPurchaseForm(opts){
+  $.ajax({
+    method: "POST",
+    url: opts.url,
+    dataType: "json",
+    data: opts.formData
+  }).done(function(data){
+    console.log(data)
+  });
+}
+
 
 $(document).on('keyup', '.plan input[type="text"]', function(event) {
   event.preventDefault();
