@@ -101,7 +101,11 @@ $(function(){
         },0)
         return prevObjTotal + totalObj
       }, 0)
-      formData['purchase[amount]'] = finalTotal;
+      var plusReg = 0;
+      if (formData["purchase[registration_fee_paid]"] === '0' || formData["purchase[registration_fee_paid]"] === 'true') {
+        plusReg = 2500;
+      }
+      formData['purchase[amount]'] = finalTotal + plusReg;
       var opts = {
         formData: formData,
         url: url

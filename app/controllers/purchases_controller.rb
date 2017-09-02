@@ -20,7 +20,16 @@ class PurchasesController < ApplicationController
   private
 
     def purchases_params
-      params.require(:purchase).permit(:move_out_location, :move_in_location, :move_out_room, :move_in_room, :move_out_date, :move_in_date, :storage_items, :ui_stripe_token, :amount)
+      params.require(:purchase).permit(:move_out_location, :move_in_location,
+                                        :move_out_room,
+                                        :move_in_room,
+                                        :registration_fee_paid,
+                                        :registration_fee_paid_date,
+                                        :move_out_date,
+                                        :move_in_date,
+                                        :storage_items,
+                                        :ui_stripe_token,
+                                        :amount)
     end
 
 end
