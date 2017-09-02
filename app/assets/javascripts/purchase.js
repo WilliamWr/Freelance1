@@ -102,9 +102,11 @@ $(function(){
         return prevObjTotal + totalObj
       }, 0)
       var plusReg = 0;
-      if (formData["purchase[registration_fee_paid]"] === '0' || formData["purchase[registration_fee_paid]"] === 'true') {
-        plusReg = 2500;
-      }
+      var pRegIsChecked = $("#purchase_registration_fee_paid").is(":checked");
+      formData["purchase[registration_fee_paid]"] = pRegIsChecked;
+
+      if (pRegIsChecked) { plusReg = 2500; }
+
       formData['purchase[amount]'] = finalTotal + plusReg;
       var opts = {
         formData: formData,
@@ -149,8 +151,9 @@ function submitPurchaseForm(opts){
         type: 'error',
         date: Date.now(),
       }).show();
+    }else{
+      location.reload();
     }
-    location.reload();
   })
 }
 

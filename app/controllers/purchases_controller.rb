@@ -6,10 +6,9 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase = current_user.purchases.build(purchases_params)
-    params[:email] = current_user.email
-    # @purchase.build_stripe_customer(params)
+    @purchase.build_stripe_customer
     respond_to do |format|
-      if @purchase.save
+      if @purchase.errors.none? && @purchase.save!
         format.json {render json: { ui_stripe_token: @purchase.stripe_token }}
       else
         format.json {render json: { ui_stripe_token: @purchase.stripe_token, errors: @purchase.errors.full_messages, }}
