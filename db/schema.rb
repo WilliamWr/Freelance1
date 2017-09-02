@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170902003022) do
+ActiveRecord::Schema.define(version: 20170902034335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170902003022) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "stripe_token"
+    t.decimal "amount"
     t.index ["confirm_other"], name: "index_purchases_on_confirm_other"
     t.index ["registration_fee_paid"], name: "index_purchases_on_registration_fee_paid"
     t.index ["user_id"], name: "index_purchases_on_user_id"

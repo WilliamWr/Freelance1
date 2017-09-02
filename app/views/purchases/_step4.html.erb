@@ -1,6 +1,6 @@
 <div role="tabpanel" class="tab-pane" id="step4">
   <p>25$ registration deposit</p>
-  <br><input id="checkBox" type="checkbox"></br>
+  <%= check_box_tag("purchase[registration_fee_paid]")%>
   <p>packing material</p>
   <br><input id="checkBox" type="checkbox"></br>
   <p>$4 moving box</p>
@@ -14,7 +14,8 @@
   <br><input id="checkBox" type="checkbox"></br>
   <p>total storage______</p>
   <br><input id="checkBox" type="checkbox"></br>
-  <div class="container col-xs-12">
+
+  <div class="container col-xs-12 card-container">
     <label for="card-element">
       Credit or debit card
     </label>
