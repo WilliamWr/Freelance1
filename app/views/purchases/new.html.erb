@@ -10,7 +10,7 @@
 <center>
 <h1>Hello <%= current_user.firstname %></h1>
 <h1> <%= current_user.schoolname %></h1></center>
-
+  <div class="pricing">
   <ul class="nav nav-tabs" role="tablist">
 
 
@@ -28,6 +28,7 @@
     </li>
   </ul>
 
+
   <!-- Tab panes -->
 
     <%= form_for(@purchase) do |f| %>
@@ -39,6 +40,8 @@
       </div>
       <%= link_to 'Next', nil, data: { is_done: false, url: 'url_to_make_post_here' }, class: 'purchase-form-btn btn btn-info'%>
     <% end %>
+    </div>
+
 
 </div>
 
