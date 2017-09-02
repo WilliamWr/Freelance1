@@ -77,13 +77,16 @@ $(function(){
       allPlan.each(function(index, elem) {
         var temp = {},
           elemType = $(elem).attr('data-type'),
+          pricePerUnit = Number($(elem).attr('data-price')),
           planFeatures = $(elem).find('.plan-features');
         // check if there is any plan feature li, if is does add to storage items
         if (planFeatures.find('.plan-feature').length > 0) {
           temp[elemType] = [];
-          planFeatures.each(function(ix, el) {
+          planFeatures.find('.plan-feature').each(function(ix, el) {
+            var count = $(el).find('[data-count]').attr('data-count');
             temp[elemType].push({
-              count: $(el).find('[data-count]').attr('data-count'),
+              total: pricePerUnit * Number(count),
+              count: count,
               description: $(el).find('[data-desc]').attr('data-desc'),
             })
           })
@@ -91,15 +94,24 @@ $(function(){
         }
       })
       formData['purchase[storage_items]'] = JSON.stringify(storage_items);
+      var finalTotal = storage_items.reduce(function(prevObjTotal, nextObj){
+        var key = Object.keys(nextObj)[0]
+        var totalObj = nextObj[key].reduce(function(prev, next){
+          return prev + next.total
+        },0)
+        return prevObjTotal + totalObj
+      }, 0)
+      formData['purchase[amount]'] = finalTotal;
       var opts = {
         formData: formData,
         url: url
       }
-      if ($("[name='stripeToken']").length > 0) {
-        submitPurchaseForm(opts)
-      }else {
-        createToken(opts);
-      }
+
+      // if ($("[name='stripeToken']").length > 0) {
+      //   submitPurchaseForm(opts)
+      // }else {
+      createToken(opts);
+      // }
     }else{
       // Using the validated library check if the inputs are valid
       // is is valid going to remove disableTab class form the tab and go to the next tab
@@ -124,9 +136,18 @@ function submitPurchaseForm(opts){
     url: opts.url,
     dataType: "json",
     data: opts.formData
-  }).done(function(data){
-    console.log(data)
-  });
+  })
+  .done(function(data){
+    if (!!data.errors && data.errors.length > 0) {
+      Noty.closeAll();
+      new Noty({
+        text: data.errors,
+        type: 'error',
+        date: Date.now(),
+      }).show();
+    }
+    location.reload();
+  })
 }
 
 

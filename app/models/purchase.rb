@@ -4,27 +4,27 @@ class Purchase < ApplicationRecord
                         :move_out_room, :move_in_room, :move_out_date,
                         :move_in_date
   attr_accessor :ui_stripe_token
+  before_create :build_stripe_customer
 
-  def build_stripe_customer(params)
-    begin
-      purchase_params = params["purchase"]
-      # Get the payment token ID submitted by the form:
-      customer = Stripe::Customer.create(
-        :email  => params[:email],
-        :source => purchase_params[:ui_stripe_token]
-      )
-      # Charge the Customer instead of the card:
-      charge = Stripe::Charge.create(
-        :amount => purchase_params[:amount] || 1000,
-        :currency => "usd",
-        :description  => params[:email],
-        :customer => customer.id,
-      )
+  def build_stripe_customer()
+    charge = Stripe::Charge.create(
+      :amount => self.amount || 2000,
+      :currency => "usd",
+      :description => "Charge for #{self.user.email}",
+      :source => self.ui_stripe_token
+    )
+    self.stripe_token = charge.id
+    rescue Stripe::CardError => e
+      # Since it's a decline, Stripe::CardError will be caught
+      body = e.json_body
+      err  = body[:error]
+      # raise "#{err[:message]}"
+       # errors[:base] << "This donation is invalid because #{e}"
+      self.errors.add(:base, err[:message])
+      # return false
     rescue Stripe::InvalidRequestError => e
       logger.error "Stripe error while creating customer: #{e.message}"
-      errors.add :base, "There was a problem with your credit card."
-      false
-    end
-    self.stripe_token = customer.id
+      self.errors.add :base, "There was a problem with your credit card."
+      return false
   end
 end

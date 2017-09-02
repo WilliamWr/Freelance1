@@ -1,7 +1,7 @@
 <div role="tabpanel" class="tab-pane" id="step2">
   <div class="plans" data-type="plans-features">
     <h2>Choose amount of items by size & Give Description</h2>
-    <div class="plan" data-type="small">
+    <div class="plan" data-type="small"  data-price=<%= 3500 %>>
       <img src="https://www.stowsimple.com/images/2x4%20Urbin%20Closet_COLLEGE.gif" alt="">
       <h3 class="plan-title">Small Items</h3>
       <p class="plan-price">$35 <span class="plan-unit">per month</span></p>
@@ -14,7 +14,7 @@
       <%= text_field_tag("small_item_description", nil, class: 'form-control') %>
     </div>
 
-    <div class="plan plan-highlight" data-type="medium">
+    <div class="plan plan-highlight" data-type="medium" data-price=<%= 4500 %>>
       <p class="plan-recommended">Recommended</h3>
       <img src="https://www.stowsimple.com/images/2x4%20Urbin%20Closet_COLLEGE.gif" alt="">
       <h3 class="plan-title">Medium Items</h3>
@@ -28,7 +28,7 @@
       <%= text_field_tag("medium_item_description", nil, class: 'form-control') %>
     </div>
 
-    <div class="plan" data-type="large">
+    <div class="plan" data-type="large" data-price=<%= 6000 %>>
       <img src="https://www.stowsimple.com/images/5x5%20Urbin%20Closet_COLLEGEv2.gif" alt="">
 
       <h3 class="plan-title">Large Items</h3>
@@ -42,7 +42,7 @@
       <%= text_field_tag("large_item_description", nil, class: 'form-control') %>
     </div>
 
-    <div class="plan" data-type="extra_large">
+    <div class="plan" data-type="extra_large"  data-price=<%= 7500 %>>
       <img src="https://www.stowsimple.com/images/5x8%20Urbin%20Closet_COLLEGE%20copy.gif" alt="">
       <h3 class="plan-title">Extra Large</h3>
       <p class="plan-price">$75 <span class="plan-unit">per month</span></p>
@@ -55,7 +55,7 @@
       <%= text_field_tag("extra_large_item_description", nil, class: 'form-control') %>
     </div>
 
-    <div class="plan" data-type="huge">
+    <div class="plan" data-type="huge"  data-price=<%= 9500 %>>
       <img src="https://www.stowsimple.com/images/Icon_SS_Large%20Storage%20Unit.gif" alt="">
       <h3 class="plan-title">Huge Items</h3>
       <p class="plan-price">$95 <span class="plan-unit">per month</span></p>
@@ -75,8 +75,5 @@
   <li>A $25 non-refundable registration deposit  is due on May 1st. Deposit will count towards your total cost of service. Registration after the deadline may incur a $20 late fee.</li>
   <li>Free pick up and delivery are scheduled for the summer on Monday the 15th , Tuesday the 16th , and around move in day in the fall. Exact dates and times will be given for each student at final registration.</li>
   </div>
-
-
-
 
 </div>
