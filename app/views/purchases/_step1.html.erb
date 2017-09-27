@@ -12,7 +12,7 @@
         <% end %>
 
         <!-- TODO -->
-        <%= f.select(:move_out_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
+        <%#= f.select(:move_out_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
 
       </div>
       <div class="col-md-6">
@@ -32,7 +32,7 @@
         <% end %>
 
         <!-- TODOD -->
-        <%= f.select(:move_in_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
+        <%#= f.select(:move_in_location, options_for_select(@locations.map{ |s| [s, s.tr(' ', '').underscore]}), class: 'form-control', required: true) %>
       </div>
       <div class="col-md-6">
         <%= f.label(:move_in_room, "Room #", class: 'block') %>
