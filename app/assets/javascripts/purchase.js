@@ -60,6 +60,14 @@ $(function(){
     }
   });
 
+  $(document).on('change', '#purchase_registration_fee_paid', function(event) {
+    if ($(this).is(":checked")) {
+      $(".package-material").removeClass("hidden")
+    }else{
+      $(".package-material").addClass("hidden")
+    }
+  })
+
   $(document).on('click', '.purchase-form-btn', function(event) {
     event.preventDefault();
     var self = $(this),
@@ -107,7 +115,15 @@ $(function(){
 
       if (pRegIsChecked) { plusReg = 2500; }
 
-      formData['purchase[amount]'] = finalTotal + plusReg;
+      var dateAmt = 0;
+      var purchaseOutVal = $("#purchase_move_out_date").val(),
+          purchaseInVal = $("#purchase_move_in_date").val();
+
+      if (purchaseOutVal.length > 0 && purchaseInVal.length > 0) {
+        dateAmt = 2500;
+      }
+      formData['purchase[amount]'] = finalTotal + plusReg + dateAmt;
+
       var opts = {
         formData: formData,
         url: url

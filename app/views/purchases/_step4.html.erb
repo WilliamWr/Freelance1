@@ -4,14 +4,14 @@
   <%= f.check_box :registration_fee_paid %>
 
 
-
+  <div class="package-material hidden">
   <h2>---CHOOSE YOUR PACKING MATERIALS---</h2>
 
-  <h3>Moving Boxes (24in x 18in) <%= number_field_tag("large_item_count", nil, class: 'form-control', min: 0, max: 15) %></h3>
-  <h3>Packing tape <%= number_field_tag("large_item_count", nil, class: 'form-control', min: 0, max: 5) %></h3>
-  <h3>Mattress bags <%= number_field_tag("large_item_count", nil, class: 'form-control', min: 0, max: 5) %></h3>
-  <h3>Bubble Wrap (12in x 20ft) <%= number_field_tag("large_item_count", nil, class: 'form-control', min: 5) %></h3>
-
+  <h3>Moving Boxes (24in x 18in) <%= number_field_tag("large_item_count", nil, class: 'form-control', min: 0, max: 5) %></h3>
+  <h3>Packing tape <%= number_field_tag("large_item_count", nil, class: 'form-control', min: 0, max: 2) %></h3>
+  <h3>Mattress bags <%= number_field_tag("large_item_count", nil, class: 'form-control', min: 0, max: 2) %></h3>
+  <h3>Bubble Wrap (12in x 20ft) <%= number_field_tag("large_item_count", nil, class: 'form-control', min: 2) %></h3>
+  </div>
 
   <p>Your total storage cost is ______ + 25$ registration fee = _____</p>
   <p>Confirm all of this is correct to pay now</p>

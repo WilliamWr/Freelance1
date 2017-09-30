@@ -9,7 +9,15 @@
 <div>
 <center>
 <h1>Hello <%= current_user.firstname %></h1>
-<h1> <%= current_user.schoolname %></h1></center>
+<h1> <%= current_user.schoolname  %></h1>
+<%if current_user.schoolname == "Albright College"%>
+<h1>Albright College
+Move-Out Dates (May 15th & 16th)
+Move-In Dates (August 26th & 27th)</h1>
+<%end%>
+
+
+</center>
   <div class="pricing">
   <ul class="nav nav-tabs" role="tablist">
 
